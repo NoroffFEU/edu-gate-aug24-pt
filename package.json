@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "The frontend part of edugate",
   "engines": {
-    "node": ">=18.17.1",
-    "npm": ">=10.8.2"
+    "node": ">=20.13.1",
+    "npm": ">=10.5.2"
   },
   "main": "app.js",
   "type": "module",
