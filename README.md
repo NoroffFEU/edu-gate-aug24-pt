@@ -6,6 +6,10 @@ Edugate is a result management system tailored to meet the needs of high schools
 
 For development, you will only need node version >=20.13.1 and npm version >=10.5.2 installed in your environement.
 
+## Development Standard
+
+[Click here to view the Development Standard](https://docs.google.com/document/d/1Y2X9s_OPY0wSVfV1-ZlJ1qSaZ8mw_EytcUXP--uKMFs/edit?tab=t.0#heading=h.a1d2xjp35qkh)
+
 ## Technologies
 
     - HTML
