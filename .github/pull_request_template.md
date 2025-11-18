@@ -1,58 +1,32 @@
-# Pull Request: [FEAT/FIX]: Brief, Descriptive Title
+## Description
 
-_(e.g., feat: added email format validation to login form)_
+Briefly explain what this PR does.
 
----
+## Related Issues
 
-## 📌 Issue Link
+Link related issues (e.g., `Closes #12`).
 
-Resolves: #[GitHub Issue Number]
+## Changes
 
----
+- List main changes
+- Keep it concise
 
-## 📝 Summary of Changes
+## Checklist
 
-Describe the changes made in this PR.  
-_(e.g., Implemented the new Student Dashboard component. Added all fields and wired up the local data rendering logic.)_
+- [ ] Code quality (DRY, semantic structure)
+- [ ] The feature has been visually compared to the design mock-ups
+- [ ] Error handling (There is no console.log(), asynchrounos code uses try...catch)
+- [ ] Readability (variables and components follows naming conventions)
 
----
+## Tooling and testing
 
-## ✅ Checklist for the Developer
+- [ ] Linter/Formatter: I have run npm run code-format and npm run lint successfully.
+- [ ] Functional test: I have locally tested the feature and verified all Acceptance Criteria (AC) are met.
 
-A merge can only occur if all items in this checklist are complete.
+## Screenshots (if possible)
 
-### **Technical Quality**
+Please add screenshots or screen recordings of changes/fixes etc
 
-- [ ] **Code Quality:** The code adheres to all best practices (DRY, semantic structure).
-- [ ] **Design Compliance:** I have visually compared the feature to the design mockups.
-- [ ] **Error Handling:** Asynchronous logic uses `try...catch` and avoids raw `console.log()`.
-- [ ] **Readability:** All variables and components follow the mandated naming conventions.
+## Anything else the QA should know?
 
-### **Tooling & Testing**
-
-- [ ] **Linter/Formatter:** I have run `npm run code-format` and `npm run lint` successfully.
-- [ ] **Functional Test:** I have locally tested the feature and verified all Acceptance Criteria (AC) are met.
-
----
-
-## 📸 Screenshots
-
-If possible, please provide screenshots or screen recordings of changes or interactions.
-
----
-
-## 🧭 Anything Else the QA Should Be Aware Of
-
-Add any additional notes that would help QA evaluate this feature, such as:
-
-- Known limitations or temporary behaviors
-- Required environment variables or feature flags
-- Dependencies on another PR or backend change
-- Special roles, permissions, or account types needed
-- Any unusual steps not covered in the test plan
-
----
-
-## 🚨 Potential Impacts
-
-- [ ] Does this change affect any other components or features? If so, list them:
+Please add if there is anyhting the QA should know about this change/fix etc
