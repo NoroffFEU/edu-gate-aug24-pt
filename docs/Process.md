@@ -3,6 +3,7 @@
 ## Process
 
 ### Phase 1
+
 1. **Orientation**
    - Attend the Agency 1 Introduction and Orientation calls, or watch the recordings, for an overview of expectations.
 2. **Sign Up**
@@ -17,6 +18,7 @@
    - Review the GitHub Repository’s [user stories](https://github.com/NoroffFEU/edu-gate/blob/develop/docs/Project-Requirements.md) to understand project requirements.
 
 ### Phase 2
+
 1. **Design Planning**
    - Collaborate to depict the style guide and Hi-Fi prototype for mobile in Figma that adhered to QA engineer's design standards.
 2. **Sprint Planning**
@@ -25,20 +27,22 @@
    - Arrange a "show and tell" call with teachers to get feedback or approval on the design once completed.
 
 ### Phase 3
+
 1. **Development Standards**
    - QA's set development standards for the team.
 2. **Development Begins**
    - Provide feedback on each other’s work. Use Agile methodologies:
-      - Daily Stand-Ups
-         - What you did yesterday
-         - Today's tasks (mention tickets)
-         - Blockers (anything that is prohibiting you from completing your task)
-      - Sprint Planning and Retrospectives
-         - Reflect on what went well and what could improve.
+     - Daily Stand-Ups
+       - What you did yesterday
+       - Today's tasks (mention tickets)
+       - Blockers (anything that is prohibiting you from completing your task)
+     - Sprint Planning and Retrospectives
+       - Reflect on what went well and what could improve.
 3. **Client Showcase**
    - Once development is complete, schedule a call with the client for a project showcase.
 
 ### Phase 4
+
 1. **Final Submission**
    - Submit the final product link to the client.
 2. **Written Reflection**
@@ -47,6 +51,7 @@
 ## Requirements
 
 Your contribution is assessed based on your written reflection and role responsibilities. Ensure you include:
+
 - Screenshots of Figma contributions.
 - Links to relevant GitHub Issues and Pull Requests.
 - A link to the project board filtered by your GitHub username.
@@ -60,6 +65,7 @@ Your contribution is assessed based on your written reflection and role responsi
 - Informative commit messages and Pull Request descripttions will benefit the entire team.
 
 ## Important Links
+
 1. [Agency 1 Sign Up Form](https://forms.office.com/e/QRE4GchecV)
 2. [Project Plan](https://github.com/orgs/NoroffFEU/projects/214/views/1)
 3. [GitHub Repo](https://github.com/NoroffFEU/edu-gate)
