@@ -40,16 +40,33 @@ footer {
 	display: flex;
 	flex-direction: row;
 	height: 100%;
+	justify-content: center;
 }
 
 footer img {
 	height: 250px;
 	min-width: 350px;
+	object-fit: contain;
+	display: block;
+}
+
+.footer-img-mobile {
+	display: none;
 }
 
 @media (max-width: 424px) {
+
 	footer img {
 		width: 100%;
 		min-width: 1px;
+		margin-left: 1.5em;
+	}
+
+	.footer-img-mobile {
+		display: block;
+	}
+
+	.footer-img-desktop {
+		display: none;
 	}
 }
