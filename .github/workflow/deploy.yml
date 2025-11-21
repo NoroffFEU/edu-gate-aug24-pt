@@ -3,7 +3,7 @@ name: Deploy static website to GitHub Pages
 on:
   push:
     branches: ["develop"] # Change to your default branch if not main
-  workflow_dispatch: # Allow manual runs
+  workflow_dispatch:    # Allow manual runs
 
 permissions:
   contents: read

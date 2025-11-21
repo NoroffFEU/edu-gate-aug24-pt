@@ -270,7 +270,7 @@
       "class": "SS3",
       "schoolId": "sch-001"
     },
-    {
+        {
       "id": "stu-401",
       "role": "student",
       "firstName": "Kunle",

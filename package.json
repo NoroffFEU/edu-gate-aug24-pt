@@ -9,9 +9,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "lint": "eslint .",
-    "code-format": "prettier --write ."
+    "start": "node ./src/index.js",
+    "live": "live-server"
   },
   "repository": {
     "type": "git",
@@ -23,20 +22,12 @@
     "url": "https://github.com/sulenchy/edu-gate/issues"
   },
   "homepage": "https://github.com/sulenchy/edu-gate#readme",
+  "dependencies": {},
   "directories": {
     "doc": "docs"
   },
   "keywords": [],
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "eslint": "^9.39.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-react": "^7.37.5",
-    "globals": "^16.5.0",
-    "live-server": "^1.2.2",
-    "prettier": "^3.6.2"
+    "live-server": "^1.2.2"
   }
 }
