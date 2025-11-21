@@ -12,7 +12,9 @@ function router() {
   try {
     const url = new URL(window.location.href);
     path = url.pathname;
-  } catch (e) {}
+  } catch (e) {
+    console.error("Invalid URL:", e);
+  }
   if (path.endsWith("index.html") || path === "/templates/") path = "/";
 
   const route = routes.find((r) => r.path === path);

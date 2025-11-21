@@ -11,8 +11,8 @@
   "scripts": {
     "start": "node ./src/index.js",
     "live": "live-server",
-    "lint": "eslint .",
-    "format": "prettier --write ."
+    "lint": "eslint --config eslint.config.js .",
+    "code-format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
     "globals": "^16.5.0",
     "live-server": "^1.2.2",
     "prettier": "^3.6.2"
