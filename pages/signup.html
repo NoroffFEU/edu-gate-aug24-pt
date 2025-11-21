@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign up — EduGate</title>
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+  <main class="login-container">
+
+    <section class="login-card">
+      <h2 class="login-title">Sign up</h2>
+
+      <form id="signupForm" novalidate>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="example@mail.com" required />
+          <div id="emailError" class="error"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input id="firstName" name="firstName" type="text" placeholder="Ola" required />
+            <div id="firstNameError" class="error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="surname">Surname</label>
+            <input id="surname" name="surname" type="text" placeholder="Nordmann" required />
+            <div id="surnameError" class="error"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Choose password" required />
+          <div id="passwordError" class="error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Repeat password" required />
+          <div id="confirmPasswordError" class="error"></div>
+        </div>
+
+        <button type="submit" class="login-btn signup-btn" id="signupBtn">Submit</button>
+
+        <div class="signup">
+          Already have an account? <a href="/pages/login.html">Log in</a>
+        </div>
+
+      </form>
+    </section>
+
+    <div class="circles-wrapper">
+      <img src="../public/img/circle-footer.png" class="circles-img" alt="footer illustration">
+    </div>
+
+  </main>
+
+  <script src="../src/signup.js"></script>
+</body>
+</html>

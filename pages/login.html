@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Log in — EduGate</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+  <main class="login-container">
+
+    <section class="login-card">
+
+      <h2 class="login-title">Log in</h2>
+
+      <form id="loginForm" novalidate>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="example@mail.com" required />
+          <div id="emailError" class="error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Enter password" required />
+          <div id="passwordError" class="error"></div>
+        </div>
+
+        <a href="/pages/forgot.html" class="forgot">Forgot your password? Click here</a>
+
+        <button id="loginBtn" type="submit" class="login-btn">Submit</button>
+
+        <div class="signup">
+          Don't have an account? <a href="/pages/signup.html">Sign up</a>
+        </div>
+      </form>
+    </section>
+    <div class="circles-wrapper">
+  <img src="../public/img/circle-footer.png" class="circles-img" alt="background circles">
+</div>
+  </main>
+ <script type="module" src="../src/login.js"></script>
+</body>
+</html>

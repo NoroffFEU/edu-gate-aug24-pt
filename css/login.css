@@ -1,0 +1,186 @@
+/* ===== Page Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-neutral-gray);
+  font-family: var(--secondary-font);
+  color: var(--color-neutral-dark-gray);
+}
+
+/* ===== Layout ===== */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px;
+  position: relative;
+  overflow: visible;
+}
+
+/* ===== Card ===== */
+.login-card {
+  width: 474px;
+  min-height: 400px;
+  padding: 48px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  z-index: 5;
+  margin-top: 80px;
+  position: relative;
+}
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.login-title {
+  margin: -20px 0 10px 0;
+  text-align: center;
+  font-family: var(--primary-font);
+  font-size: var(--heading-2);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing);
+}
+
+/* ===== Form ===== */
+.form-group {
+  margin-bottom: var(--padding-16px);
+}
+
+.form-group label {
+  display: block;
+  font-size: var(--small-txt);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 315px;
+  height: 50px;
+  padding: 0 16px;
+  font-size: var(--paragraph);
+  border-radius: 6px;
+  border: 1px solid var(--color-neutral-medium-gray);
+  background: #ffffff;
+  transition: 0.25s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.25);
+}
+
+.error {
+  color: var(--accent-color);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Layout for first name + surname side-by-side - Signup  page*/
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  width: 320px;
+}
+.form-row .form-group input {
+  width: 100%;
+}
+
+/* ===== Links ===== */
+.forgot {
+  font-size: var(--small-txt);
+  color: var(--secondary-color);
+  text-decoration: none;
+  margin-top: 6px;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* ===== Primary Button ===== */
+.login-btn {
+  width: 140px;
+  height: 59px;
+  padding: 10px 20px;
+  display: block;
+  margin: 16px auto 0;
+  background: var(--primary-color);
+  color: #ffffff;
+  font-size: 20px;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: var(--letter-spacing);
+  transition: 0.25s ease;
+}
+
+.login-btn:hover {
+  background: #388e3c;
+}
+
+/* Signup Button!*/
+.signup-btn {
+  width: 160px;
+  height: 52px;
+  font-size: 20px;
+  margin-top: 24px;
+}
+
+/* ===== Signup Note ===== */
+.signup {
+  margin-top: var(--padding-24px);
+  text-align: center;
+  font-size: var(--paragraph);
+  color: var(--color-neutral-medium-gray);
+}
+
+.signup a {
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+/*wrapper */
+
+.circles-wrapper {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 685px;
+  max-width: 90vw;
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circles-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(6%);
+  object-fit: contain;
+}
