@@ -4,37 +4,17 @@
     "es6": true,
     "node": true
   },
-  "extends": [
-    "eslint:recommended",
-  ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
+  "extends": ["eslint:recommended"],
   "parserOptions": {
-    "ecmaFeatures": {
-        "jsx": true
-    },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": [
-    "jsx-a11y",
-    "import"
-  ],
   "rules": {
-    "array-bracket-spacing": ["error", "always"],
-    "curly": ["error", "multi-line"],
-    "eqeqeq": ["error", "always"],
-    "linebreak-style": ["error", "unix"],
     "indent": ["error", 2],
-    "jsx-quotes": ["error", "prefer-double"],
-    "init-declarations": ["error", "always"],
-    "max-len": ["error", { "code": 80 }],
-    "no-label-var": "error",
-    "no-undef": "error",
-    "object-curly-spacing": ["error", "always"],
     "quotes": ["error", "single"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "eqeqeq": ["error", "always"],
+    "curly": ["error", "multi-line"],
+    "max-len": ["error", { "code": 100 }]
   }
 }
