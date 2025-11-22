@@ -4,14 +4,14 @@ import pluginReact from "eslint-plugin-react";
 import pluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
 export default [
-  // 1. ESLint recommended base rules (for core JavaScript)
+  // ESLint recommended base rules (for core JavaScript)
   js.configs.recommended,
 
-  // 2. Combined React and Custom Project Rules Block
+  // Combined React and Custom Project Rules Block
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
 
-    // CRITICAL FIX: Explicitly define plugins as an object, as required by Flat Config.
+    // Explicitly define plugins as an object, as required by Flat Config.
     plugins: {
       react: pluginReact,
     },
@@ -30,8 +30,8 @@ export default [
       // Inherit rules from React Recommended (manually extracted)
       ...pluginReact.configs.recommended.rules,
 
-      // --- MANDATORY STANDARD COMPLIANCE ---
-      "no-console": ["error", { allow: ["warn", "error"] }], // Section 2.4
+      // No console.log in the code
+      "no-console": ["error", { allow: ["warn", "error"] }],
 
       // Project Code Quality Rules (Carried over from original .eslintrc)
       "init-declarations": ["error", "always"],
@@ -52,6 +52,6 @@ export default [
     },
   },
 
-  // 3. Prettier Integration (Always Last)
+  // 3. Prettier Integration (always Last)
   pluginPrettierRecommended,
 ];
