@@ -36,7 +36,8 @@ body {
   flex-direction: column;
   gap: 48px;
   z-index: 5;
-  margin-top: 80px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   position: relative;
 }
 .login-card form {
