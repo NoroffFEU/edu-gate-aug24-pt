@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Freehand&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Freehand&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
 :root {
   /*colors*/
   --primary-color: #4caf50; /*Represents growth, education, and reliability.*/
@@ -10,19 +9,13 @@
   --color-neutral-dark-gray: #333333; /*(text)*/
   --color-neutral-medium-gray: #757575; /*(secondary text and borders)*/
 
-  /*padding and margin*/
-
-  /*Small Padding (8px, 16px): Used for tight, internal spacing within buttons, inputs, and compact layouts.*/
-  --padding-8px: 8px; /**/
+  --padding-8px: 8px;
   --padding-16px: 16px;
-  /*Medium Padding (24px, 32px): Used for cards, sections within pages, and content within modals.*/
   --padding-24px: 24px;
   --padding-32px: 32px;
-  /*Large Padding (40px, 48px): Reserved for page layout containers, major section separations, and margins around large blocks of content.*/
   --padding-40px: 40px;
   --padding-48px: 48px;
 
-  /*fonts*/
   --primary-font: "Poppins", sans-serif;
   --secondary-font: "Roboto", sans-serif;
 
@@ -69,7 +62,7 @@ p {
   font-size: var(--paragraph);
 }
 a {
-  font-size: 18px; /*it was 18 in the figma file*/
+  font-size: 18px;
 }
 label {
   font-size: var(--small-txt);

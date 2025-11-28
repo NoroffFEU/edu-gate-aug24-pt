@@ -1,0 +1,171 @@
+/* ========= Page Layout ========= */
+.page-content {
+  padding: 40px;
+  margin-left: 90px;
+  margin-top: 24px;
+  background: var(--color-neutral-gray);
+  min-height: calc(100vh - 120px);
+  box-sizing: border-box;
+  font-family: var(--secondary-font);
+}
+
+.page-title {
+  font-size: var(--heading-1);
+  font-weight: 700;
+  color: var(--color-neutral-dark-gray);
+  text-align: center;
+  margin-bottom: 6px;
+  font-family: var(--primary-font);
+}
+
+.page-sub {
+  text-align: center;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+.controls {
+  max-width: 500px;
+  margin: 0 auto 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.controls input {
+  width: 420px;
+  max-width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--color-neutral-medium-gray);
+  background: #fff;
+  font-size: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  outline: none;
+}
+
+.table-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.students-table thead th {
+  background: #fafafa;
+  padding: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-neutral-dark-gray);
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.students-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.students-table tbody tr:hover td {
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+#pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+#pagination button {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#pagination button.active {
+  background: var(--secondary-color);
+  color: #fff;
+  border-color: var(--secondary-color);
+}
+
+.center-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-secondary {
+  background: #fff;
+  border: 2px solid var(--secondary-color);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+/* ========= Mobile — Card Layout ========= */
+@media (max-width: 900px) {
+  .page-content {
+    margin-left: 0;
+    padding: 20px 14px 80px;
+  }
+
+  .students-table thead {
+    display: none;
+  }
+
+  .students-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    margin-bottom: 14px;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+  }
+
+  .students-table td {
+    border: none;
+    padding: 6px 2px;
+  }
+
+  .students-table td:nth-child(1) {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  #pagination {
+    gap: 3px;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+  #pagination button {
+    padding: 6px 8px;
+    font-size: 13px;
+    min-width: 34px;
+    border-radius: 6px;
+  }
+
+  
+}

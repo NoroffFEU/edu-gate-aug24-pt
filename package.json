@@ -9,7 +9,9 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node ./src/index.js",
+    "api": "node ./data/server.js",
+    "dev": "node ./src/index.js",
+    "start": "npm run api & npm run dev",
     "live": "live-server",
     "lint": "eslint --config eslint.config.js .",
     "code-format": "prettier --write ."
@@ -38,5 +40,10 @@
     "globals": "^16.5.0",
     "live-server": "^1.2.2",
     "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "xlsx": "^0.18.5"
   }
 }

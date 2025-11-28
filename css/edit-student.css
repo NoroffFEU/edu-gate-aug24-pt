@@ -1,0 +1,154 @@
+/* ===== Edit Student Page ===== */
+
+.page-content {
+  padding: 40px 32px;
+  margin-left: 90px;
+  background: var(--color-neutral-gray);
+  font-family: var(--secondary-font);
+  min-height: calc(100vh - 160px);
+}
+
+.page-title {
+  font-size: var(--heading-1);
+  font-family: var(--primary-font);
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-align: center;
+  color: var(--color-neutral-dark-gray);
+}
+
+.page-sub {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 16px;
+  color: var(--color-neutral-medium-gray);
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 34px 38px;
+  border-radius: 16px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-neutral-dark-gray);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.btn-main {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-main:hover {
+  background: var(--primary-hover, #3d8e3e);
+}
+
+.btn-danger {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-danger:hover {
+  background: var(--accent-hover, #d64531); /* fallback */
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--secondary-color);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-color);
+  color: white;
+}
+
+/* ===== Modal ===== */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+.modal:not(.hidden) {
+  display: flex;
+}
+
+.modal-box {
+  background: #fff;
+  width: 92%;
+  max-width: 420px;
+  padding: 26px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+  .page-content {
+    margin-left: 0;
+    padding: 24px 16px;
+  }
+
+  .form-container {
+    padding: 22px;
+  }
+}

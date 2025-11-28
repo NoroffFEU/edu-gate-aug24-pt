@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Results — EduGate</title>
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/results.css" />
+  </head>
+
+  <body class="teacher-dashboard-page">
+    <div id="header"></div>
+    <div id="teacher-mobile-nav"></div>
+    <div id="teacher-sidebar"></div>
+
+    <main class="page-content">
+      <h1 class="page-title" id="studentTitle">Student Results</h1>
+
+      <p class="page-sub" id="studentMeta">Loading student...</p>
+
+      <div class="controls">
+        <input
+          id="searchResult"
+          type="text"
+          placeholder="Search results (subject)..."
+        />
+      </div>
+
+      <div class="results-wrapper">
+        <table class="results-table" aria-label="Student results">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Score</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody id="resultsTbody"></tbody>
+        </table>
+      </div>
+
+      <div class="center-btn">
+        <a href="/pages/teacher-dashboard.html" class="btn-secondary"
+          >Back to dashboard</a
+        >
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="../app.js"></script>
+    <script type="module" src="../components/sidebar-teacher.js"></script>
+    <script type="module" src="../src/results.js"></script>
+  </body>
+</html>

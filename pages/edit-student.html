@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit Student — EduGate</title>
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/edit-student.css" />
+  </head>
+
+  <body class="teacher-dashboard-page">
+    <div id="header"></div>
+    <div id="teacher-mobile-nav"></div>
+    <div id="teacher-sidebar"></div>
+
+    <main class="page-content">
+      <h1 class="page-title">Manage Student</h1>
+      <p class="page-sub">Edit the student info below</p>
+
+      <div class="form-container">
+        <form id="editForm" class="edit-student-form">
+          <div class="form-group">
+            <label>ID:</label>
+            <input id="idField" type="text" disabled />
+          </div>
+
+          <div class="form-group">
+            <label>First name:</label>
+            <input id="firstName" type="text" required />
+          </div>
+
+          <div class="form-group">
+            <label>Last name:</label>
+            <input id="lastName" type="text" required />
+          </div>
+
+          <div class="form-group">
+            <label>Class:</label>
+            <input id="class" type="text" required />
+          </div>
+
+          <div class="form-group">
+            <label>School ID:</label>
+            <input id="schoolId" type="text" />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-main">Update</button>
+            <button type="button" id="deleteStudentBtn" class="btn-danger">
+              Delete student
+            </button>
+            <a href="./user-management.html" class="btn-secondary">Back</a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Delete confirmation modal -->
+    <div id="confirmModal" class="modal hidden">
+      <div class="modal-box">
+        <h3>Are you sure?</h3>
+        <p>This student will be permanently removed.</p>
+        <div class="modal-actions">
+          <button id="confirmYes" class="btn-danger">Yes, delete</button>
+          <button id="confirmNo" class="btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script type="module" src="../app.js"></script>
+    <script type="module" src="../components/sidebar-teacher.js"></script>
+    <script type="module" src="../src/edit-student.js"></script>
+  </body>
+</html>

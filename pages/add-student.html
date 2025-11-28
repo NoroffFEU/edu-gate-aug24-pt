@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add Students — EduGate</title>
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/add-student.css" />
+  </head>
+
+  <body class="teacher-dashboard-page">
+    <div id="header"></div>
+    <div id="teacher-mobile-nav"></div>
+    <div id="teacher-sidebar"></div>
+
+    <main class="page-content">
+      <div class="page-inner">
+        <h1 class="page-title">Add Students</h1>
+        <p class="page-sub">
+          To add students, upload an Excel spreadsheet with this format:
+        </p>
+
+        <div class="upload-area">
+          <div class="template-preview">
+            <img
+              src="../assets/excel-template.png"
+              alt="Excel template"
+              onerror="this.style.display='none'"
+            />
+          </div>
+
+          <div class="uploader">
+            <input id="excelInput" type="file" accept=".xlsx,.xls" />
+            <div class="uploader-controls">
+              <button id="uploadBtn" class="btn-main big">Upload +</button>
+              <label class="send-api">
+                <input id="sendApi" type="checkbox" /> Send to server
+              </label>
+            </div>
+            <p id="uploadStatus" class="status-message" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <section id="previewBlock" class="preview-block hidden">
+          <h2 class="small-title">Preview</h2>
+          <div class="table-scroll">
+            <table id="studentsPreview" class="preview-table"></table>
+          </div>
+
+          <div class="preview-actions">
+            <button id="confirmUploadBtn" class="btn-main">
+              Confirm &amp; Save
+            </button>
+            <button id="clearPreviewBtn" class="btn-secondary">Clear</button>
+          </div>
+        </section>
+
+        <div class="center-btn">
+          <button id="backBtn" class="btn-secondary">Back to dashboard</button>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
+    <script type="module" src="../app.js"></script>
+    <script type="module" src="../components/sidebar-teacher.js"></script>
+    <script type="module" src="../src/add-student.js"></script>
+  </body>
+</html>

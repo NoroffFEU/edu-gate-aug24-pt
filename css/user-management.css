@@ -1,0 +1,280 @@
+/*  User Management (Select User) = */
+
+/* ========= Page Layout ========= */
+.page-content {
+  padding: 40px;
+  margin-left: 90px;
+  margin-top: 24px;
+  background: var(--color-neutral-gray);
+  min-height: calc(100vh - 120px);
+  box-sizing: border-box;
+  font-family: var(--secondary-font);
+}
+
+.page-title {
+  font-size: var(--heading-1);
+  font-weight: 700;
+  color: var(--color-neutral-dark-gray);
+  text-align: center;
+  margin-bottom: 26px;
+  font-family: var(--primary-font);
+}
+
+.controls {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.controls input {
+  width: 420px;
+  max-width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--color-neutral-medium-gray);
+  background: #fff;
+  font-size: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  outline: none;
+}
+
+.btn-add {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin: 18px auto;
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background: #3d8e3e;
+}
+
+.table-wrapper {
+  max-width: 1100px;
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.users-table thead th {
+  background: #fafafa;
+  padding: 14px;
+  font-size: 14px;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  color: var(--color-neutral-dark-gray);
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.users-table tbody td {
+  padding: 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.users-table tbody tr:hover td {
+  background: #f9f9f9;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-delete {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+#pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+#pagination button {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#pagination button.active {
+  background: var(--secondary-color);
+  color: #fff;
+  border-color: var(--secondary-color);
+}
+
+/* ========= Modal ========= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-box {
+  background: #fff;
+  width: 92%;
+  max-width: 420px;
+  padding: 28px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.14);
+}
+
+.modal-box h3 {
+  font-family: var(--primary-font);
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.modal-actions {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+#confirmDelete {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#confirmDelete:hover {
+  background: #d4481b;
+}
+
+#cancelDelete {
+  background: #fff;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#cancelDelete:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+/* ========= Back to Dashboard Button ========= */
+.btn-secondary {
+  background: #fff;
+  border: 2px solid var(--secondary-color);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+/* ========= Mobile — Card Layout ========= */
+@media (max-width: 900px) {
+  .page-content {
+    margin-left: 0;
+    padding: 20px 14px 80px;
+  }
+
+  .users-table thead {
+    display: none;
+  }
+
+  .users-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    margin-bottom: 14px;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+  }
+
+  .users-table tbody td {
+    border: none !important;
+    padding: 6px 2px;
+  }
+
+  .users-table tbody td:nth-child(1) {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    display: none !important;
+  }
+
+  #pagination {
+    gap: 3px;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+  #pagination button {
+    padding: 6px 8px;
+    font-size: 13px;
+    min-width: 34px;
+    border-radius: 6px;
+  }
+}

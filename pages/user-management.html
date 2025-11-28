@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Students — EduGate</title>
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/user-management.css" />
+  </head>
+
+  <body class="teacher-dashboard-page">
+    <div id="header"></div>
+    <div id="teacher-mobile-nav"></div>
+    <div id="teacher-sidebar"></div>
+
+    <main class="page-content">
+      <h1 class="page-title">Students</h1>
+
+      <div class="controls">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search by name or ID"
+        />
+      </div>
+
+      <div style="max-width: 1100px; margin: 8px auto 18px">
+        <button id="addUserBtn" class="btn-add">+ Add Student</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="users-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Year</th>
+              <th>Role</th>
+              <th>DOB</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersTbody"></tbody>
+        </table>
+      </div>
+
+      <div
+        id="pagination"
+        style="
+          max-width: 1100px;
+          margin: 12px auto;
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+        "
+      ></div>
+
+      <div style="max-width: 1100px; margin: 22px auto; text-align: center">
+        <button id="backToDash" class="btn-secondary">Back to dashboard</button>
+      </div>
+    </main>
+
+    <div id="confirmModal" class="modal hidden">
+      <div class="modal-box">
+        <h3>Are you sure?</h3>
+        <p>This user will be permanently removed.</p>
+        <div class="modal-actions">
+          <button id="confirmDelete" class="btn-danger">Delete</button>
+          <button id="cancelDelete" class="btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script type="module" src="../app.js"></script>
+    <script type="module" src="../components/sidebar-teacher.js"></script>
+    <script type="module" src="../src/user-management.js"></script>
+  </body>
+</html>

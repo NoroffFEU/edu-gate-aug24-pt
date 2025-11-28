@@ -1,69 +1,370 @@
+/* Base reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Page defaults */
 html,
 body {
+  background: var(--color-neutral-gray);
+  font-family: var(--secondary-font);
+  color: var(--color-neutral-dark-gray);
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Header */
+/* ======== HEADER ========= */
 
-header {
-  margin-bottom: 25px;
-  border: var(--color-neutral-medium-gray);
-  border-style: inset;
-  border-width: 0.5px;
-
+.main-header {
   position: sticky;
   top: 0;
-  z-index: 9;
   background: var(--color-neutral-gray);
+  border-bottom: 1px solid var(--color-neutral-medium-gray);
+  padding: 24px 20px;
+  z-index: 1000;
 }
 
-.UserLogo {
-  width: 64px;
-  height: 64px;
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  img {
-    width: 64px;
-    height: 64px;
+.logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.header-nav {
+  display: flex;
+  gap: 48px;
+}
+
+.header-nav a {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-neutral-dark-gray);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.header-nav a:hover {
+  color: var(--primary-color);
+}
+
+.burger-btn {
+  background: none;
+  border: none;
+  font-size: 34px;
+  cursor: pointer;
+  display: none;
+}
+
+.close-nav {
+  display: none;
+}
+
+.nav-icon {
+  display: none;
+}
+
+/* ======== MAIN HEADER — Mobile + Sidebar ========= */
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 16px;
+  }
+
+  .header-container {
+    max-width: 393px;
+    margin: 0 auto;
+  }
+
+  .logo img {
+    width: 76px;
+    height: 76px;
+  }
+
+  .burger-btn {
+    display: block;
+  }
+
+  .header-nav {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background: var(--color-neutral-gray);
+    flex-direction: column;
+    padding: 120px 24px 0; /* updated */
+    gap: 28px;
+    box-shadow: -4px 0 18px rgba(0, 0, 0, 0.12);
+    transition: right 0.28s ease;
+    z-index: 9999;
+  }
+
+  .header-nav.show {
+    right: 0;
+  }
+
+  .close-nav {
+    display: block;
+    position: absolute;
+    top: 24px;
+    right: 20px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .header-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 22px;
+    padding: 16px 0 16px 90px;
+  }
+
+  .nav-icon {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
   }
 }
 
-/* /header */
-
-/* footer */
+/* ===== FOOTER ===== */
 
 footer {
   display: flex;
-  flex-direction: row;
-  height: 100%;
   justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-footer img {
-  height: 250px;
-  min-width: 350px;
-  object-fit: contain;
+footer img:first-child {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
   display: block;
 }
 
 .footer-img-mobile {
   display: none;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
 }
 
+/* ===== FOOTER MOBILE RESPONSIVE ===== */
+
 @media (max-width: 424px) {
-  footer img {
-    width: 100%;
-    min-width: 1px;
-    margin-left: 1.5em;
+  footer img:first-child {
+    display: none;
   }
 
   .footer-img-mobile {
     display: block;
   }
+}
 
-  .footer-img-desktop {
+/* ==========TEACHER SIDEBAR — DESKTOP VERSION============ */
+
+.teacher-desktop-sidebar {
+  width: 90px;
+  background: var(--color-neutral-gray);
+  border-right: 1px solid #ddd;
+  position: fixed;
+  top: 150px;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  overflow: hidden;
+  transition: width 0.25s ease;
+}
+
+.teacher-desktop-sidebar:hover {
+  width: 240px;
+}
+
+.teacher-desktop-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 110px;
+}
+
+.teacher-desktop-sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 25px 20px;
+  font-size: 15px;
+  color: var(--color-neutral-dark-gray);
+  text-decoration: none;
+  transition: 0.25s ease;
+  white-space: nowrap;
+}
+
+.teacher-desktop-sidebar nav a:hover {
+  color: var(--primary-color);
+}
+
+.teacher-desktop-sidebar nav a img {
+  width: 41px;
+  height: 41px;
+  object-fit: contain;
+}
+
+.teacher-desktop-sidebar nav a span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.teacher-desktop-sidebar:hover nav a span {
+  opacity: 1;
+}
+
+.teacher-desktop-sidebar a.logout span {
+  color: var(--accent-color);
+}
+
+/* Hide desktop sidebar on mobile */
+@media (max-width: 900px) {
+  .teacher-desktop-sidebar {
     display: none;
   }
+}
+
+/* ==========TEACHER MOBILE HEADER=========== */
+
+.teacher-mobile-header {
+  display: none;
+  height: 110px;
+  padding: 0 20px;
+  background: var(--color-neutral-gray);
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 900;
+}
+
+.teacher-mobile-logo {
+  width: 80px;
+  height: auto;
+}
+
+#teacher-mobile-toggle {
+  font-size: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* Show header only on mobile */
+@media (max-width: 900px) {
+  .teacher-mobile-header {
+    display: flex;
+  }
+}
+
+/* ==========TEACHER MOBILE SIDEBAR=========== */
+
+.teacher-mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 280px;
+  height: 100vh;
+  background: var(--color-neutral-gray);
+  padding: 100px 24px 0;
+  box-shadow: -4px 0 18px rgba(0, 0, 0, 0.12);
+  transition: right 0.28s ease;
+  z-index: 1000;
+}
+
+.teacher-mobile-sidebar.open {
+  right: 0;
+}
+
+.teacher-mobile-sidebar button#teacher-mobile-close {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.teacher-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.teacher-mobile-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  font-size: 18px;
+  color: var(--color-neutral-dark-gray);
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.teacher-mobile-links a img {
+  width: 28px;
+  height: 28px;
+}
+
+.teacher-mobile-links a.logout {
+  color: var(--accent-color);
+}
+
+.teacher-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 900;
+}
+
+.teacher-mobile-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/*      ===== global css  ===== */
+
+.error {
+  color: #e63946;
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.success-message {
+  color: #000000ac;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 14px;
+  display: none;
 }
