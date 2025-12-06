@@ -1,0 +1,137 @@
+/* ===== Dashboard Layout ===== */
+main {
+  flex: 1;
+  padding: 30px 32px;
+  text-align: center;
+  background: var(--color-neutral-gray);
+  font-family: var(--secondary-font);
+  margin-left: 90px;
+}
+
+/* ===== Page Header ===== */
+.page-title {
+  font-size: var(--heading-1);
+  font-family: var(--primary-font);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* ===== Profile Section ===== */
+.profile-section {
+  margin-bottom: 32px;
+}
+
+.profile-circle {
+  width: 140px;
+  height: 140px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--primary-font);
+  font-size: 28px;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.teacher-name {
+  font-family: var(--primary-font);
+  font-size: var(--heading-3);
+  font-weight: 700;
+  margin: 0;
+}
+
+.teacher-role {
+  margin-top: 6px;
+  margin-bottom: 40px;
+  color: var(--color-neutral-medium-gray);
+  font-size: var(--small-txt);
+}
+
+/* ===== Action Grid ===== */
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  gap: 54px 48px;
+  justify-content: center;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+/* ===== Action Card ===== */
+.action-card {
+  width: 160px;
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: all 0.15s ease;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.action-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.action-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.action-card p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Bottom Actions */
+.bottom-actions {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.logout-card p {
+  color: var(--accent-color);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+  main {
+    padding: 24px 16px;
+    margin-left: 0;
+  }
+
+  .actions-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 420px;
+    justify-items: center;
+  }
+
+  .action-card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .bottom-actions {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .bottom-actions .action-card {
+    width: 360px;
+  }
+}
