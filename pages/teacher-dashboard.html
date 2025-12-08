@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teacher Dashboard — EduGate</title>
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/teacher-dashboard.css" />
+  </head>
+
+  <body class="teacher-dashboard-page">
+    <div id="header"></div>
+    <div id="teacher-sidebar"></div>
+    <div id="teacher-mobile-nav"></div>
+
+    <main class="main">
+      <div class="page-header">
+        <h1 class="page-title">Dashboard</h1>
+      </div>
+
+      <section class="profile-section">
+        <div class="profile-circle">JB</div>
+        <h2 class="teacher-name">Joe Bloggs</h2>
+        <p class="teacher-role">Teacher at EduGate school</p>
+      </section>
+
+      <section class="actions-grid">
+        <button class="action-card">
+          <img src="../public/icons/top-students.png" alt="Top students" />
+          <p>Top students</p>
+        </button>
+
+        <button class="action-card" href="/pages/.html">
+          <img src="../public/icons/add-results.png" alt="Add results" />
+          <p>Add results</p>
+        </button>
+
+        <a class="action-card" href="/pages/select-student.html">
+          <img src="../public/icons/add-results.png" alt="View results" />
+          <p>View results</p>
+        </a>
+
+        <div class="bottom-actions">
+          <button class="action-card">
+            <img src="../public/icons/user-circle.png" alt="See profile" />
+            <p>See profile</p>
+          </button>
+
+          <button class="action-card logout-card">
+            <img src="../public/icons/logout.png" alt="Log out" />
+            <p>Log out</p>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="../app.js"></script>
+    <script type="module" src="../components/sidebar-teacher.js"></script>
+  </body>
+</html>
