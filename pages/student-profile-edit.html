@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | Edugate</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body>
+    <header id="header"></header>
+    <main>
+        <h1>Edit Profile</h1>
+        <img src="../public/img/profil.png" alt="student profile picture">
+        <div id="card">
+            <form id="edit-profile-form">
+                <label for="name-input">Name:</label>
+                <input id="name-input" type="text" placeholder="Joe Bloggs" required>
+                <label for="email-input">Email:</label>
+                <input id="email-input" type="email" placeholder="joeblog2024@edugate.no" required>
+                <label for="dob-input">DOB:</label>
+                <input id="dob-input" type="date" placeholder="01/01/2002" required>
+                <label for="year-input">Grad Year:</label>
+                <input id="year-input" type="number" placeholder="2020" required>
+                <label for="school-input">School:</label>
+                <input id="school-input" type="text" required>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="../app.js"></script>
+</body>
+
+</html>
