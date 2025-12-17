@@ -54,6 +54,14 @@ input {
     border-radius: 0 6px 6px 0;
 }
 
+.search-button:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.search-button:active {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
 .search-button img {
     width: 20px;
     padding: 2px;

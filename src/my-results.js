@@ -7,11 +7,25 @@ let filteredRows = [];
 const filters = {
     session: "all",
     term: "all",
-    subject: "all"
+    subject: "all",
+    search: ""
 };
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
+
+    /* searchInput.addEventListener("input", (e) => {
+        filters.search = e.target.value.trim();
+        applyFilters();
+    }); */
+
+    searchButton.addEventListener("click", () => {
+        filters.search = searchInput.value.trim();
+        applyFilters();
+    });
 
     document.getElementById("year-header").addEventListener("click", () => {
         filters.session = "all";
@@ -139,7 +153,24 @@ function applyFilters() {
         return false;
         if (filters.subject !== "all" && row.subject !== filters.subject) 
         return false;
-    
+
+        if (filters.search) {
+            const q = filters.search.trim().toLowerCase();
+            const isGradeQuery = /[a-f]$/i.test(q);
+
+            if(isGradeQuery) {
+                if (row.grade.toLowerCase() !== q)
+                return false;
+            } else {
+                const subjectMatch = row.subject.toLowerCase().includes(q);
+                const gradeMatch = row.grade.toLowerCase().includes(q);
+                const scoreMatch = String(row.score).includes(q);
+
+                if (!subjectMatch && !gradeMatch && !scoreMatch) 
+                return false;
+            }                        
+        }
+
         return true;
     });
 
