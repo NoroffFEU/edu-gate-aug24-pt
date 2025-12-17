@@ -17,11 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search-input");
     const searchButton = document.getElementById("search-button");
 
-    /* searchInput.addEventListener("input", (e) => {
-        filters.search = e.target.value.trim();
-        applyFilters();
-    }); */
-
     searchButton.addEventListener("click", () => {
         filters.search = searchInput.value.trim();
         applyFilters();
