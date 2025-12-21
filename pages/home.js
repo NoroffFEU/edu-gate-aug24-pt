@@ -11,8 +11,8 @@ export default function Home() {
 
     <section class="hero-cta">
       <div class="hero-buttons">
-        <a href="/signup" data-link class="btn btn-primary">Sign Up</a>
-        <a href="/login" data-link class="btn btn-secondary">Log In</a>
+        <a href="/pages/signup.html" class="btn btn-primary">Sign Up</a>
+        <a href="/pages/login.html" class="btn btn-secondary">Log In</a>
       </div>
     </section>
   `;
