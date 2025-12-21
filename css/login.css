@@ -5,16 +5,12 @@
 
 html,
 body {
-  margin: 0;
-  padding: 0;
-  background: var(--color-neutral-gray);
-  font-family: var(--secondary-font);
-  color: var(--color-neutral-dark-gray);
+  height: 100%;
 }
 
 /* ===== Layout ===== */
 .login-container {
-  min-height: 100vh;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +33,7 @@ body {
   gap: 48px;
   z-index: 5;
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   position: relative;
 }
 .login-card form {
@@ -161,27 +157,4 @@ body {
 
 .signup a:hover {
   text-decoration: underline;
-}
-
-/*wrapper */
-
-.circles-wrapper {
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 685px;
-  max-width: 90vw;
-  height: auto;
-  overflow: visible;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.circles-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transform: translateY(6%);
-  object-fit: contain;
 }
