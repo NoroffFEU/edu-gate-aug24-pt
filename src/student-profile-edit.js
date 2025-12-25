@@ -8,3 +8,8 @@ const idInput = document.getElementById("id-input")
 const yearInput = document.getElementById("year-input")
 const schoolInput = document.getElementById("school-input")
 const saveBtn = document.getElementById("save-btn")
+
+// button clicked
+saveBtn.addEventListener("click", () => {
+console.log("SAVE")
+})
