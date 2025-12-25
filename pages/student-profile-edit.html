@@ -14,19 +14,21 @@
     <header id="header"></header>
     <main>
         <h1>Edit Profile</h1>
-        <img src="../public/img/profil.png" alt="student profile picture">
+        <img src="../public/icons/profile-icon.png" alt="student profile picture">
         <div id="card">
             <form id="edit-profile-form">
                 <label for="name-input">Name:</label>
-                <input id="name-input" type="text" placeholder="Joe Bloggs" required>
+                <input id="name-input" class="input-top" type="text" placeholder="Joe Bloggs" required>
                 <label for="email-input">Email:</label>
-                <input id="email-input" type="email" placeholder="joeblog2024@edugate.no" required>
-                <label for="dob-input">DOB:</label>
-                <input id="dob-input" type="date" placeholder="01/01/2002" required>
+                <input id="email-input" class="input-top" type="email" placeholder="joeblog2024@edugate.no" required>
+                <label for="dob-input">Date of Birth:</label>
+                <input id="dob-input" class="input-top" type="date" placeholder="01/01/2002" required>
+                <label for="id-input">ID:</label>
+                <input id="id-input" class="input-bottom" type="text" placeholder="0123456" required>
                 <label for="year-input">Grad Year:</label>
-                <input id="year-input" type="number" placeholder="2020" required>
+                <input id="year-input" class="input-bottom" type="number" placeholder="2020" required>
                 <label for="school-input">School:</label>
-                <input id="school-input" type="text" required>
+                <input id="school-input" class="input-bottom" type="text" placeholder="The Academy" required>
                 <button type="submit">Update</button>
             </form>
         </div>
