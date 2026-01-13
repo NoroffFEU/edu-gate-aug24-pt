@@ -6,10 +6,15 @@ import Footer from "./components/footer.js";
 
 // Redirect to home.html if on root or index.html
 const currentPath = window.location.pathname;
-const shouldRedirect = currentPath === "/" || currentPath === "/index.html" || currentPath.endsWith("/index.html");
+// Handle both local development and GitHub Pages (with base path /edu-gate-aug24-pt/)
+const isRoot = currentPath === "/" || currentPath === "/edu-gate-aug24-pt/" || currentPath === "/edu-gate-aug24-pt";
+const isIndex = currentPath.endsWith("/index.html") || currentPath.endsWith("index.html");
+const shouldRedirect = isRoot || isIndex;
 
 if (shouldRedirect) {
-  window.location.replace("/home.html");
+  // Construct redirect URL relative to current location (works on both local and GitHub Pages)
+  const redirectUrl = new URL('pages/home.html', window.location.href).href;
+  window.location.replace(redirectUrl);
 } else {
   // Only initialize app if not redirecting
   const headerEl = document.getElementById("header");
