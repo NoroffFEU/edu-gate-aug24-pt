@@ -5,7 +5,6 @@ main {
   text-align: center;
   background: var(--color-neutral-gray);
   font-family: var(--secondary-font);
-  margin-left: 90px;
 }
 
 /* ===== Page Header ===== */
@@ -111,7 +110,6 @@ main {
 @media (max-width: 900px) {
   main {
     padding: 24px 16px;
-    margin-left: 0;
   }
 
   .actions-grid {
