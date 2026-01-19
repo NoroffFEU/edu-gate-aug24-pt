@@ -5,120 +5,116 @@ let allRows = [];
 let filteredRows = [];
 
 const filters = {
-    session: "all",
-    term: "all",
-    subject: "all",
-    search: ""
+  session: "all",
+  term: "all",
+  subject: "all",
+  search: "",
 };
 
-
 document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search-input");
+  const searchButton = document.getElementById("search-button");
 
-    const searchInput = document.getElementById("search-input");
-    const searchButton = document.getElementById("search-button");
+  searchButton.addEventListener("click", () => {
+    filters.search = searchInput.value.trim();
+    applyFilters();
+  });
 
-    searchButton.addEventListener("click", () => {
-        filters.search = searchInput.value.trim();
-        applyFilters();
-    });
+  document.getElementById("year-header").addEventListener("click", () => {
+    filters.session = "all";
+    applyFilters();
+  });
 
-    document.getElementById("year-header").addEventListener("click", () => {
-        filters.session = "all";
-        applyFilters();
-    });
+  document.getElementById("term-header").addEventListener("click", () => {
+    filters.term = "all";
+    applyFilters();
+  });
 
-    document.getElementById("term-header").addEventListener("click", () => {
-        filters.term = "all";
-        applyFilters();
-    });
+  document.getElementById("subject-header").addEventListener("click", () => {
+    filters.subject = "all";
+    applyFilters();
+  });
 
-    document.getElementById("subject-header").addEventListener("click", () => {
-        filters.subject = "all";
-        applyFilters();
-    });
+  document.getElementById("results-body").addEventListener("click", (e) => {
+    const yearCell = e.target.closest(".year-cell");
+    if (yearCell) {
+      filters.session = yearCell.dataset.session;
+      applyFilters();
+      return;
+    }
 
-    document.getElementById("results-body").addEventListener("click", (e) => {
+    const termCell = e.target.closest(".term-cell");
+    if (termCell) {
+      filters.term = Number(termCell.dataset.term);
+      applyFilters();
+      return;
+    }
 
-        const yearCell = e.target.closest(".year-cell");
-        if (yearCell) {
-            filters.session = yearCell.dataset.session;
-            applyFilters();
-            return;
-        }
+    const subjectCell = e.target.closest(".subject-cell");
+    if (subjectCell) {
+      filters.subject = subjectCell.dataset.subject;
+      applyFilters();
+      return;
+    }
+  });
 
-        const termCell = e.target.closest(".term-cell");
-        if (termCell) {
-            filters.term = Number(termCell.dataset.term);
-            applyFilters();
-            return;
-        }
+  fetch("../data/Results.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const currentStudentId = "stu-101";
 
-        const subjectCell = e.target.closest(".subject-cell");
-        if (subjectCell) {
-            filters.subject = subjectCell.dataset.subject;
-            applyFilters();
-            return;
-        }
+      const studentRecords = data.results.filter(
+        (result) => result.studentId === currentStudentId
+      );
 
-    });
+      if (studentRecords.length === 0) {
+        console.warn("Student not found");
+        return;
+      }
 
-    fetch("../data/Results.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const currentStudentId = "stu-105";
+      const termMap = {
+        "First Term": 1,
+        "Second Term": 2,
+        "Third Term": 3,
+      };
 
-            const studentRecords = data.results.filter(
-                result => result.studentId === currentStudentId
-            );
+      allRows = [];
 
-            if (studentRecords.length === 0) {
-                console.warn("Student not found");
-                return;
-            }
+      studentRecords.forEach((record) => {
+        const year = record.session.split("/")[0];
+        const termNumber = termMap[record.term] ?? record.term;
 
-            const termMap = {
-                "First Term": 1,
-                "Second Term": 2,
-                "Third Term": 3
-            };
-
-            allRows = [];
-
-            studentRecords.forEach((record) => {
-                const year = record.session.split("/")[0];
-                const termNumber = termMap[record.term] ?? record.term;
-
-                record.subjects.forEach((subject) => {
-                    allRows.push({
-                        year,
-                        session: record.session,
-                        term: termNumber,
-                        subject: subject.name,
-                        score: subject.score,
-                        grade: subject.grade
-                    });
-                });
-            });
-
-            filteredRows = allRows;
-            renderPage(1);
-        })
-        .catch(error => {
-            console.error("Error loading Results.json", error);
+        record.subjects.forEach((subject) => {
+          allRows.push({
+            year,
+            session: record.session,
+            term: termNumber,
+            subject: subject.name,
+            score: subject.score,
+            grade: subject.grade,
+          });
         });
+      });
+
+      filteredRows = allRows;
+      renderPage(1);
+    })
+    .catch((error) => {
+      console.error("Error loading Results.json", error);
+    });
 });
 
 function renderPage(page) {
-    const tbody = document.getElementById("results-body");
-    tbody.innerHTML = "";
-    const startIndex = (page - 1) * rowsPerPage;
-    const endIndex = startIndex + rowsPerPage;
-    const pageRows = filteredRows.slice(startIndex, endIndex);
+  const tbody = document.getElementById("results-body");
+  tbody.innerHTML = "";
+  const startIndex = (page - 1) * rowsPerPage;
+  const endIndex = startIndex + rowsPerPage;
+  const pageRows = filteredRows.slice(startIndex, endIndex);
 
-    pageRows.forEach((row) => {
-        const tr = document.createElement("tr");
+  pageRows.forEach((row) => {
+    const tr = document.createElement("tr");
 
-        tr.innerHTML = `
+    tr.innerHTML = `
             <td class="col-year year-cell" data-session="${row.session}">${row.year}</td>
             <td class="col-term term-cell" data-term="${row.term}">${row.term}</td>
             <td class="col-subject subject-cell" data-subject="${row.subject}">${row.subject}</td>
@@ -132,104 +128,104 @@ function renderPage(page) {
             </td>
         `;
 
-        tbody.appendChild(tr);
-    });
+    tbody.appendChild(tr);
+  });
 
-    currentPage = page;
-    renderPagination(filteredRows.length);
-};
-
+  currentPage = page;
+  renderPagination(filteredRows.length);
+}
 
 function applyFilters() {
-    filteredRows = allRows.filter(row => {
-        if (filters.session !== "all" && row.session !== filters.session) 
-        return false;
-        if (filters.term !== "all" && row.term !== filters.term) 
-        return false;
-        if (filters.subject !== "all" && row.subject !== filters.subject) 
-        return false;
+  filteredRows = allRows.filter((row) => {
+    if (filters.session !== "all" && row.session !== filters.session)
+      return false;
+    if (filters.term !== "all" && row.term !== filters.term) return false;
+    if (filters.subject !== "all" && row.subject !== filters.subject)
+      return false;
 
-        if (filters.search) {
-            const q = filters.search.trim().toLowerCase();
-            const isGradeQuery = /[a-f]$/i.test(q);
+    if (filters.search) {
+      const q = filters.search.trim().toLowerCase();
+      const isGradeQuery = /[a-f]$/i.test(q);
 
-            if(isGradeQuery) {
-                if (row.grade.toLowerCase() !== q)
-                return false;
-            } else {
-                const subjectMatch = row.subject.toLowerCase().includes(q);
-                const gradeMatch = row.grade.toLowerCase().includes(q);
-                const scoreMatch = String(row.score).includes(q);
+      if (isGradeQuery) {
+        if (row.grade.toLowerCase() !== q) return false;
+      } else {
+        const subjectMatch = row.subject.toLowerCase().includes(q);
+        const gradeMatch = row.grade.toLowerCase().includes(q);
+        const scoreMatch = String(row.score).includes(q);
 
-                if (!subjectMatch && !gradeMatch && !scoreMatch) 
-                return false;
-            }                        
-        }
+        if (!subjectMatch && !gradeMatch && !scoreMatch) return false;
+      }
+    }
 
-        return true;
-    });
+    return true;
+  });
 
-    renderPage(1);
+  renderPage(1);
 }
 
 function renderPagination(totalItems) {
-    const totalPages = Math.ceil(totalItems / rowsPerPage);
-    const pagination = document.getElementById("pagination");
+  const totalPages = Math.ceil(totalItems / rowsPerPage);
+  const pagination = document.getElementById("pagination");
 
-    pagination.innerHTML = "";
+  pagination.innerHTML = "";
 
-    const firstBtn = createIconButton("../public/icons/chevron-double-left.png", () => {
-        renderPage(1);
-    });
-    firstBtn.disabled = currentPage === 1;
-    pagination.appendChild(firstBtn);
-
-    const prevBtn = createIconButton("../public/icons/chevron-left.png", () => {
-        if (currentPage > 1) renderPage(currentPage - 1);
-    });
-    prevBtn.disabled = currentPage === 1;
-    pagination.appendChild(prevBtn);
-
-    for (let page = 1; page <= totalPages; page++) {
-        const btn = document.createElement("button");
-        btn.className = "page-btn";
-
-        if (page === currentPage) btn.classList.add("active");
-
-        btn.textContent = page;
-
-        btn.addEventListener("click", () => {
-            renderPage(page);
-        });
-
-        pagination.appendChild(btn);
+  const firstBtn = createIconButton(
+    "../public/icons/chevron-double-left.png",
+    () => {
+      renderPage(1);
     }
+  );
+  firstBtn.disabled = currentPage === 1;
+  pagination.appendChild(firstBtn);
 
-    const nextBtn = createIconButton("../public/icons/chevron-right.png", () => {
-        if (currentPage < totalPages) renderPage(currentPage + 1);
-    });
-    nextBtn.disabled = currentPage === totalPages;
-    pagination.appendChild(nextBtn);
+  const prevBtn = createIconButton("../public/icons/chevron-left.png", () => {
+    if (currentPage > 1) renderPage(currentPage - 1);
+  });
+  prevBtn.disabled = currentPage === 1;
+  pagination.appendChild(prevBtn);
 
-    const lastBtn = createIconButton("../public/icons/chevron-double-right.png", () => {
-        renderPage(totalPages);
-    });
-    lastBtn.disabled = currentPage === totalPages;
-    pagination.appendChild(lastBtn);
-
-};
-
-function createIconButton(iconPath, onClick) {
+  for (let page = 1; page <= totalPages; page++) {
     const btn = document.createElement("button");
     btn.className = "page-btn";
 
-    const img = document.createElement("img");
-    img.src = iconPath;
-    img.alt = "";
+    if (page === currentPage) btn.classList.add("active");
 
-    btn.appendChild(img);
-    btn.addEventListener("click", onClick);
+    btn.textContent = page;
 
-    return btn;
-};
+    btn.addEventListener("click", () => {
+      renderPage(page);
+    });
 
+    pagination.appendChild(btn);
+  }
+
+  const nextBtn = createIconButton("../public/icons/chevron-right.png", () => {
+    if (currentPage < totalPages) renderPage(currentPage + 1);
+  });
+  nextBtn.disabled = currentPage === totalPages;
+  pagination.appendChild(nextBtn);
+
+  const lastBtn = createIconButton(
+    "../public/icons/chevron-double-right.png",
+    () => {
+      renderPage(totalPages);
+    }
+  );
+  lastBtn.disabled = currentPage === totalPages;
+  pagination.appendChild(lastBtn);
+}
+
+function createIconButton(iconPath, onClick) {
+  const btn = document.createElement("button");
+  btn.className = "page-btn";
+
+  const img = document.createElement("img");
+  img.src = iconPath;
+  img.alt = "";
+
+  btn.appendChild(img);
+  btn.addEventListener("click", onClick);
+
+  return btn;
+}

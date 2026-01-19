@@ -28,60 +28,6 @@
       "schoolId": "sch-001"
     },
     {
-      "id": "tch-201",
-      "role": "teacher",
-      "firstName": "Sola",
-      "lastName": "Fashola",
-      "gender": "Male",
-      "subjects": ["English Language", "Biology", "Chemistry"],
-      "schoolId": "sch-001"
-    },
-    {
-      "id": "tch-202",
-      "role": "teacher",
-      "firstName": "Titi",
-      "lastName": "Ojo",
-      "gender": "Female",
-      "subjects": ["Physics", "Economics", "Government"],
-      "schoolId": "sch-001"
-    },
-    {
-      "id": "tch-203",
-      "role": "teacher",
-      "firstName": "Kunle",
-      "lastName": "Garba",
-      "gender": "Male",
-      "subjects": ["ICT", "Mathematics"],
-      "schoolId": "sch-001"
-    },
-    {
-      "id": "tch-301",
-      "role": "teacher",
-      "firstName": "Hassan",
-      "lastName": "Balogun",
-      "gender": "Male",
-      "subjects": ["Biology", "Chemistry", "Physics"],
-      "schoolId": "sch-001"
-    },
-    {
-      "id": "tch-302",
-      "role": "teacher",
-      "firstName": "Ngozi",
-      "lastName": "Oniyide",
-      "gender": "Female",
-      "subjects": ["Economics", "Government", "ICT"],
-      "schoolId": "sch-001"
-    },
-    {
-      "id": "tch-303",
-      "role": "teacher",
-      "firstName": "Hassan",
-      "lastName": "Ogunleye",
-      "gender": "Male",
-      "subjects": ["Mathematics", "English Language"],
-      "schoolId": "sch-001"
-    },
-    {
       "id": "tch-401",
       "role": "teacher",
       "firstName": "Ifeanyi",
@@ -109,60 +55,6 @@
       "schoolId": "sch-002"
     },
     {
-      "id": "tch-501",
-      "role": "teacher",
-      "firstName": "Yusuf",
-      "lastName": "Adeyemi",
-      "gender": "Male",
-      "subjects": ["Biology", "Chemistry", "Physics"],
-      "schoolId": "sch-002"
-    },
-    {
-      "id": "tch-502",
-      "role": "teacher",
-      "firstName": "Ngozi",
-      "lastName": "Emefiele",
-      "gender": "Female",
-      "subjects": ["Economics", "Government", "ICT"],
-      "schoolId": "sch-002"
-    },
-    {
-      "id": "tch-503",
-      "role": "teacher",
-      "firstName": "Chinedu",
-      "lastName": "Yarima",
-      "gender": "Male",
-      "subjects": ["Mathematics", "English Language"],
-      "schoolId": "sch-002"
-    },
-    {
-      "id": "tch-601",
-      "role": "teacher",
-      "firstName": "Chinedu",
-      "lastName": "Nzekwe",
-      "gender": "Male",
-      "subjects": ["Physics", "Economics", "Government"],
-      "schoolId": "sch-002"
-    },
-    {
-      "id": "tch-602",
-      "role": "teacher",
-      "firstName": "Amaka",
-      "lastName": "Akpabio",
-      "gender": "Female",
-      "subjects": ["ICT", "Mathematics", "English Language"],
-      "schoolId": "sch-002"
-    },
-    {
-      "id": "tch-603",
-      "role": "teacher",
-      "firstName": "Ayodele",
-      "lastName": "Obiano",
-      "gender": "Male",
-      "subjects": ["Biology", "Chemistry"],
-      "schoolId": "sch-002"
-    },
-    {
       "id": "tch-701",
       "role": "teacher",
       "firstName": "Kunle",
@@ -187,60 +79,6 @@
       "lastName": "Okonkwo",
       "gender": "Male",
       "subjects": ["Government", "ICT"],
-      "schoolId": "sch-003"
-    },
-    {
-      "id": "tch-801",
-      "role": "teacher",
-      "firstName": "Kunle",
-      "lastName": "Sule",
-      "gender": "Male",
-      "subjects": ["Biology", "Chemistry", "Physics"],
-      "schoolId": "sch-003"
-    },
-    {
-      "id": "tch-802",
-      "role": "teacher",
-      "firstName": "Ngozi",
-      "lastName": "Zubairu",
-      "gender": "Female",
-      "subjects": ["Economics", "Government", "ICT"],
-      "schoolId": "sch-003"
-    },
-    {
-      "id": "tch-803",
-      "role": "teacher",
-      "firstName": "Taiwo",
-      "lastName": "Amadi",
-      "gender": "Male",
-      "subjects": ["Mathematics", "English Language"],
-      "schoolId": "sch-003"
-    },
-    {
-      "id": "tch-901",
-      "role": "teacher",
-      "firstName": "Gbenga",
-      "lastName": "Bakare",
-      "gender": "Male",
-      "subjects": ["Physics", "Economics", "Government"],
-      "schoolId": "sch-003"
-    },
-    {
-      "id": "tch-902",
-      "role": "teacher",
-      "firstName": "Kemi",
-      "lastName": "Eweka",
-      "gender": "Female",
-      "subjects": ["ICT", "Mathematics", "English Language"],
-      "schoolId": "sch-003"
-    },
-    {
-      "id": "tch-903",
-      "role": "teacher",
-      "firstName": "Kunle",
-      "lastName": "Okorie",
-      "gender": "Male",
-      "subjects": ["Biology", "Chemistry"],
       "schoolId": "sch-003"
     }
   ]
