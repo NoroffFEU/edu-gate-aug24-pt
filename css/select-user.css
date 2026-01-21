@@ -1,0 +1,381 @@
+* {
+    box-sizing: border-box;
+    line-height: var(--line-height);
+}
+
+body {
+    text-align: center;
+    background-color: var(--color-neutral-gray);
+    color: var(--color-neutral-dark-gray);
+}
+
+main {
+    margin: 2em 0;
+}
+
+p {
+    margin: 2.5em;
+    font-family: var(--secondary-font);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 250px;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+input,
+.search-button {
+    border: none;
+    background: #ffffff;
+}
+
+input {
+    font-family: var(--secondary-font), sans-serif;
+    flex: 1;
+    padding: 8px;
+    color: var(--color-neutral-dark-gray);
+    border-style: solid;
+    border-color: var(--color-neutral-medium-gray);
+    border-width: 1px 0 1px 1px;
+    border-radius: 6px 0 0 6px;
+}
+
+.search-button {
+    border-radius: 0;
+    display: flex;
+    align-self: stretch;
+    border: 1px solid var(--primary-color);
+    border-radius: 0 6px 6px 0;
+}
+
+.search-button:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.search-button:active {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.search-button img {
+    width: 20px;
+    padding: 2px;
+    align-self: center;
+}
+
+.add-user-btn {
+    display: inline-block;
+    margin-bottom: 1.5em;
+    font-family: var(--primary-font), sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+}
+
+.add-user-btn:hover {
+    background-color: #388E3C;
+}
+
+/*   Table  */
+
+.table-container {
+    display: grid;
+    justify-items: end;
+    width: 100%;
+    max-width: 900px;
+    margin: 3em auto;
+    padding: 0 1.5em;
+    overflow-x: auto;
+    text-align: left;
+}
+
+table {
+    font-family: var(--secondary-font), sans-serif;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+th {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    height: 68px;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    cursor: pointer;
+    padding-right: 1em;
+}
+
+.label-mobile {
+    display: none;
+}
+
+td {
+    height: 70px;
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+tbody tr:hover td {
+    background-color: #f0f0f0;
+}
+
+.col-id {
+    padding-left: 1.5em;
+}
+
+.edit-link {
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.col-actions {
+    padding-right: 1.5em;
+}
+
+.row-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.delete-btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    letter-spacing: var(--letter-spacing);
+}
+
+.delete-btn:hover {
+    background-color: #E64A19;
+    cursor: pointer;
+}
+
+/* pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 3em;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: var(--color-neutral-medium-gray);
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+}
+
+.page-btn.active {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    font-weight: 600;
+}
+
+.page-btn img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.single-arrow img {
+    height: 16px;
+}
+
+.page-ellipsis {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    color: #777;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+  }
+
+.back-link {
+    display: inline-block;
+    font-family: var(--primary-font), sans-serif;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-decoration: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 6px;
+    padding: 8px 16px;
+}
+
+.back-link:hover {
+    background-color: #bbdefb;
+}
+
+/* modal */
+
+.modal[aria-hidden="true"] { 
+    display: none; 
+}
+
+.modal[aria-hidden="false"] { 
+    display: grid; 
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    place-items: center;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.modal-dialog {
+    position: relative;
+    width: min(450px, 100%);
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5em;
+}
+
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.modal-close img {
+    width: 17px;
+    height: 17px;
+    display: block;
+}
+
+.modal-close:hover img {
+    content: url("../public/icons/x-close(1).jpg");
+}
+
+.modal-content {
+    text-align: left;
+}
+
+.modal-text {
+    margin: 0 0 1.5em 0;
+}
+
+.delete-btn-modal {
+    background-color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    color: #ffffff;
+}
+
+.delete-btn-modal:hover {
+    background-color: #E64A19;
+    border-color: #E64A19;
+    cursor: pointer;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-btn {
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+}
+
+.cancel-btn:hover {
+    background-color: #bbdefb;
+    cursor: pointer;
+}
+
+.delete-btn-modal,
+.cancel-btn {
+    border-radius: 6px;
+    padding: 8px 16px;
+    letter-spacing: var(--letter-spacing);
+}
+
+@media (max-width: 600px) {
+
+    .add-user-btn {
+        display: none;
+    }
+
+    .label-desktop {
+        display: none;
+    }
+
+    .label-mobile {
+        display: block;
+    }
+
+    th,
+    td {
+        height: 60px;
+    }
+
+    .col-hidden {
+        display: none;
+    }
+
+    .pagination {
+        gap: .5em;
+    }
+
+    .page-btn img {
+        width: 13px;
+        height: 13px;
+    }
+
+    .page-ellipsis,
+    .page-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .modal-dialog {
+        width: min(380px, 100%);
+    }
+}

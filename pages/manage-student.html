@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../css/manage-users.css" />
+  <title>Manage student - Edugate</title>
+</head>
+
+<body>
+  <header id="header"></header>
+  <main>
+    <h1>Manage User</h1>
+    <p>Edit the user info below</p>
+    <form class="manage-user-form" id="manage-user-form">
+      <label>
+        <span>ID:</span>
+        <input type="text" name="id" value="1921840" readonly />
+      </label>
+
+      <label>
+        <span>First name:</span>
+        <input type="text" name="firstName" value="Joe" />
+      </label>
+
+      <label>
+        <span>Last name:</span>
+        <input type="text" name="lastName" value="Bloggs" />
+      </label>
+
+      <label>
+        <span>Grad year:</span>
+        <input type="number" name="gradYear" value="2020" />
+      </label>
+
+      <label>
+        <span>Position:</span>
+        <input type="text" name="position" value="Student" />
+      </label>
+
+      <label>
+        <span>DOB:</span>
+        <input type="date" name="dob" value="0000-00-00" />
+      </label>
+
+      <label>
+        <span>Email:</span>
+        <input type="email" name="email" value="email2020@edugate.no" />
+      </label>
+
+      <label>
+        <span>School:</span>
+        <input type="text" name="school" value="School name" />
+      </label>
+
+    </form>
+
+    <div class="manage-user-actions">
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="button" class="btn btn-delete" id="delete-user-btn">Delete user</button>
+    </div>
+
+    <div class="modal" id="delete-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-dialog" aria-modal="true" aria-labelledby="delete-title">
+          <button class="modal-close" type="button" aria-label="Close" data-close>
+              <img src="../public/icons/x.png" alt="close">
+          </button>
+          <div class="modal-content">
+              <h2 class="modal-title" id="delete-title">Delete Selected User</h2>
+              <p class="modal-text">
+                  Are you sure you want to delete selected user?<br> 
+                  This action is permanent and cannot be undone.
+              </p>
+              <div class="modal-actions">
+                  <button type="button" class="delete-btn-modal" id="confirm-delete">Yes, delete user</button>
+                  <button type="button" class="cancel-btn" data-close>Cancel</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  </main>
+  <footer id="footer"></footer>
+  <script type="module" src="../app.js"></script>
+  <script type="module" src="../src/manage-user.js"></script>
+</body>
+
+</html>
