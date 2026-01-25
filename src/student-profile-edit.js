@@ -1,0 +1,15 @@
+// variables
+const profileForm = document.getElementById("edit-profile-form")
+const profileImage = document.getElementsByClassName("profile-image")
+const nameInput = document.getElementById("name-input")
+const emailInput = document.getElementById("email-input")
+const dobInput = document.getElementById("dob-input")
+const idInput = document.getElementById("id-input")
+const yearInput = document.getElementById("year-input")
+const schoolInput = document.getElementById("school-input")
+const saveBtn = document.getElementById("save-btn")
+
+// button clicked
+saveBtn.addEventListener("click", () => {
+console.log("SAVE")
+})
