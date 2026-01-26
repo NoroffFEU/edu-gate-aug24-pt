@@ -11,7 +11,9 @@ async function loadUserIntoForm() {
     const dataFile = isTeacherPage
         ?"../../data/Teachers.json"
         :"../../data/Students.json";
+    
 
+    try {
     const res = await fetch(dataFile);
     const data = await res.json();
 
@@ -32,7 +34,11 @@ async function loadUserIntoForm() {
     document.querySelector('input[name="dob"]').value = user.dob ?? "";
     document.querySelector('input[name="email"]').value = user.email ?? "";
     document.querySelector('input[name="school"]').value = user.school ?? "";
-}
+
+    } catch (error) { 
+        console.error("Error loading user into form:", error)
+    }
+    }
 
 loadUserIntoForm();
 
