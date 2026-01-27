@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/select-user.css" />
+    <title>Select user - Educate</title>
+</head>
+
+<body>
+    <header id="header"></header>
+    <main>
+        <h1>Select User</h1>
+        <p>Search for the user below & select to make changes to their info:</p>
+        <div class="search-bar">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search for user..." />
+                <button id="search-button" class="search-button">
+                    <img src="../public/icons/search.png" alt="Search" />
+                </button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <a href="#" class="add-user-btn">Add user</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-id">ID</th>
+                        <th class="col-hidden">First Name</th>
+                        <th class="th-last-name">
+                            <span class="label-desktop">Last Name</span>
+                            <span class="label-mobile">L. Name</span>
+                        </th>
+                        <th class="col-hidden">Year</th>
+                        <th>Role</th>
+                        <th class="col-hidden">DOB</th>
+                        <th class="col-hidden"></th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+
+        <div class="modal" id="delete-modal" aria-hidden="true">
+            <div class="modal-backdrop" data-close></div>
+            <div class="modal-dialog" aria-modal="true" aria-labelledby="delete-title">
+                <button class="modal-close" type="button" aria-label="Close" data-close>
+                    <img src="../public/icons/x.png" alt="close">
+                </button>
+                <div class="modal-content">
+                    <h2 class="modal-title" id="delete-title">Delete Selected User</h2>
+                    <p class="modal-text">
+                        Are you sure you want to delete selected user?<br> 
+                        This action is permanent and cannot be undone.
+                    </p>
+                    <div class="modal-actions">
+                        <button type="button" class="delete-btn-modal" id="confirm-delete">Yes, delete user</button>
+                        <button type="button" class="cancel-btn" data-close>Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pagination" class="pagination"></div>
+        <a href="admin-dashboard.html" class="back-link">Back to dashboard</a>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="../app.js"></script>
+    <script type="module" src="../src/select-user.js"></script>
+</body>
+
+</html>
