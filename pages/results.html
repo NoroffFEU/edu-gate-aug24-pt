@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Results — EduGate</title>
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/results.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main class="page-content">
+      <div class="header-section">
+        <h1 class="page-title">Student Results</h1>
+        <p class="page-sub">
+          Here are the results for
+          <strong id="studentLabel">this student</strong>
+        </p>
+        <input type="text" id="search" placeholder="Search for results..." />
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" id="addResultBtn" type="button">
+          Add result
+        </button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Term</th>
+              <th>Subject</th>
+              <th>Exam</th>
+              <th>Result</th>
+              <th>Grade</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
+
+      <div class="center-btn">
+        <button class="btn-secondary" id="backBtn" type="button">
+          Back to students
+        </button>
+      </div>
+    </main>
+
+    <!-- EDIT OVERLAY -->
+    <div class="overlay hidden" id="editOverlay">
+      <div class="modal">
+        <button class="close" onclick="closeEdit()">✕</button>
+
+        <div class="grid">
+          <div>
+            <label>Year</label>
+            <input id="editYear" />
+          </div>
+          <div>
+            <label>Term</label>
+            <input id="editTerm" />
+          </div>
+          <div>
+            <label>Subject</label>
+            <input id="editSubject" />
+          </div>
+          <div>
+            <label>Exam</label>
+            <input id="editExam" />
+          </div>
+          <div>
+            <label>Result</label>
+            <input id="editResult" type="number" min="0" max="100" />
+          </div>
+          <div>
+            <label>Grade</label>
+            <input id="editGrade" disabled />
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-primary" onclick="updateResult()">Update</button>
+          <button class="btn-outline" onclick="closeEdit()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELETE OVERLAY -->
+    <div class="overlay hidden" id="deleteOverlay">
+      <div class="modal danger">
+        <button class="close" onclick="closeDelete()">✕</button>
+        <h2>Delete This Student’s Results?</h2>
+        <p>This action is permanent and cannot be undone.</p>
+
+        <div class="modal-actions">
+          <button class="btn-danger" onclick="confirmDelete()">
+            Yes, delete results
+          </button>
+          <button class="btn-outline" onclick="closeDelete()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script type="module" src="../app.js"></script>
+    <script type="module" src="../src/results.js"></script>
+  </body>
+</html>
