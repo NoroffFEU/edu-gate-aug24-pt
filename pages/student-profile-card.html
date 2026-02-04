@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/student-profile-card.css"/>
+    <title>Profile card student</title>
+</head>
+<body>
+    <header id="header"></header>
+    <main>
+        <div class="card-container">
+            <h1>Profile</h1>
+            <div class="avatar">
+                <img src="../public/img/student-initials.png" alt="" class="desktop-avatar">
+                <img src="../public/img/student-initials-mobile.png" alt="" class="mobile-avatar">
+            </div>
+            <div class="profile-details">
+                <dl class="info-grid">
+                    <dt>Name:</dt>
+                    <dd id="user-name"></dd>  
+                    <dt>Email:</dt>
+                    <dd id="user-email"></dd> 
+                    <dt>Date of birth:</dt>
+                    <dd id="user-dob"></dd> 
+                    <dt>ID:</dt>
+                    <dd id="user-id"></dd> 
+                    <dt>Grad Year:</dt>
+                    <dd id="user-grad-year"></dd> 
+                    <dt>School:</dt>
+                    <dd id="user-school-id"></dd> 
+                </dl>
+            </div>
+            <div>
+                <a href="../pages/student-profile-edit.html" class="edit-link">Edit Profile</a>
+            </div>
+        </div>
+
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="../app.js"></script>
+    <script type="module" src="../src/student-profile-card.js"></script>
+</body>
+</html>
