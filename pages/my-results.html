@@ -1,54 +1,52 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../css/my-results.css" />
-    <title>Your Results - Edugate</title>
-  </head>
 
-  <body>
-    <header id="header"></header>
-    <main>
-      <h1>Your Results</h1>
-      <div class="results-icon" hidden>
-        <img src="../public/icons/results.png" alt="Results" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../css/my-results.css" />
+  <title>Your Results - Edugate</title>
+</head>
+
+<body>
+  <header id="header"></header>
+  <main>
+    <h1>Your Results</h1>
+    <div class="results-icon" hidden>
+      <img src="../public/icons/results.png" alt="Results" />
+    </div>
+    <p>View your results</p>
+    <div class="search-bar">
+      <div class="search-wrapper">
+        <input type="text" id="search-input" placeholder="Search for results..." />
+        <button id="search-button" class="search-button">
+          <img src="../public/icons/search.png" alt="Search" />
+        </button>
       </div>
-      <p>View your results</p>
-      <div class="search-bar">
-        <div class="search-wrapper">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Search for results..."
-          />
-          <button id="search-button" class="search-button">
-            <img src="../public/icons/search.png" alt="Search" />
-          </button>
-        </div>
-      </div>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th id="year-header" class="col-year col-hidden">Year</th>
-              <th id="term-header" class="col-hidden">Term</th>
-              <th id="subject-header" class="col-subject">Subject</th>
-              <th>Exam</th>
-              <th class="col-hidden">Result</th>
-              <th>Grade</th>
-              <th class="col-info"></th>
-            </tr>
-          </thead>
-          <tbody id="results-body"></tbody>
-        </table>
-      </div>
-      <div id="pagination" class="pagination"></div>
-      <a href="#" class="back-link">Back to dashboard</a>
-    </main>
-    <footer id="footer"></footer>
-    <script type="module" src="../app.js"></script>
-    <script type="module" src="../src/my-results.js"></script>
-  </body>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th id="year-header" class="col-year col-hidden">Year</th>
+            <th id="term-header" class="col-hidden">Term</th>
+            <th id="subject-header" class="col-subject">Subject</th>
+            <th>Exam</th>
+            <th class="col-hidden">Result</th>
+            <th>Grade</th>
+            <th class="col-info"></th>
+          </tr>
+        </thead>
+        <tbody id="results-body"></tbody>
+      </table>
+    </div>
+    <div id="pagination" class="pagination"></div>
+    <a href="student-dashboard.html" class="back-link">Back to dashboard</a>
+  </main>
+  <footer id="footer"></footer>
+  <script type="module" src="../app.js"></script>
+  <script type="module" src="../src/my-results.js"></script>
+</body>
+
 </html>
