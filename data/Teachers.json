@@ -5,6 +5,8 @@
       "role": "teacher",
       "firstName": "Ifeanyi",
       "lastName": "Umeh",
+      "email": "teacher@edugate.com",
+      "password": "teacher123",
       "gender": "Male",
       "subjects": ["Mathematics", "English Language", "Biology"],
       "schoolId": "sch-001"
