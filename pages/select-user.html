@@ -12,8 +12,11 @@
 <body>
     <header id="header"></header>
     <main>
-        <h1>Select User</h1>
-        <p>Search for the user below & select to make changes to their info:</p>
+        <h1 id="page-title">Select User</h1>
+        <div class="results-icon" hidden>
+            <img src="../public/icons/results.png" alt="Results" />
+        </div>
+        <p id="page-subtitle">Search for the user below & select to make changes to their info:</p>
         <div class="search-bar">
             <div class="search-wrapper">
                 <input type="text" id="search-input" placeholder="Search for user..." />
@@ -24,20 +27,21 @@
         </div>
 
         <div class="table-container">
-            <a href="#" class="add-user-btn">Add user</a>
+            <a href="#" class="add-user-btn" id="add-user-btn">Add user</a>
             <table>
                 <thead>
                     <tr>
-                        <th class="col-id">ID</th>
-                        <th class="col-hidden">First Name</th>
-                        <th class="th-last-name">
+                        <th class="col-id" id="id-header">ID</th>
+                        <th class="col-first-name col-hidden" id="first-name-header">First Name</th>
+                        <th class="th-last-name" id="last-name-header">
                             <span class="label-desktop">Last Name</span>
                             <span class="label-mobile">L. Name</span>
                         </th>
-                        <th class="col-hidden">Year</th>
-                        <th>Role</th>
-                        <th class="col-hidden">DOB</th>
-                        <th class="col-hidden"></th>
+                        <th class="col-year col-hidden" id="year-header">Year</th>
+                        <th class="col-role" id="role-header">Role</th>
+                        <th class="col-dob col-hidden" id="dob-header">DOB</th>
+                        <th class="col-actions col-hidden" id="action-header"></th>
+                        <th class="col-info"></th>
                     </tr>
                 </thead>
                 <tbody id="table-body"></tbody>
@@ -65,7 +69,7 @@
         </div>
 
         <div id="pagination" class="pagination"></div>
-        <a href="admin-dashboard.html" class="back-link">Back to dashboard</a>
+        <a href="admin-dashboard.html" class="back-link" id="back-link">Back to dashboard</a>
     </main>
     <footer id="footer"></footer>
     <script type="module" src="../app.js"></script>
