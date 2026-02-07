@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/add-results.css" />
 </head>
+
 <body>
     <header id="header"></header>
     <main>
@@ -14,16 +16,11 @@
         <p>To add results, upload an Excel spreadsheet with this format: </p>
         <div class="import-panel">
             <form class="import-form" id="import-form" action="">
-                <input 
-                    type="file"
-                    id="excelInput"
-                    name="excel"
-                    accept=".xlsx, .xls"
-                    required >
+                <input type="file" id="excelInput" name="excel" accept=".xlsx, .xls" required>
             </form>
             <div class="form-actions">
                 <button type="button" class="upload-btn" id="upload-btn">Upload +</button>
-                <a href="#" class="back-link">Back to dashboard</a>
+                <a href="teacher-dashboard.html" class="back-link">Back to dashboard</a>
             </div>
         </div>
     </main>
@@ -31,4 +28,5 @@
     <script type="module" src="../app.js"></script>
     <script type="module" src="../src/add-results.js"></script>
 </body>
+
 </html>
