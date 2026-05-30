@@ -135,3 +135,176 @@ main {
     width: 360px;
   }
 }
+
+/* ==========TEACHER SIDEBAR — DESKTOP VERSION============ */
+
+.teacher-desktop-sidebar {
+  width: 90px;
+  background: var(--color-neutral-gray);
+  border-right: 1px solid #ddd;
+  position: fixed;
+  top: 150px;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  overflow: hidden;
+  transition: width 0.25s ease;
+}
+
+.teacher-desktop-sidebar:hover {
+  width: 240px;
+}
+
+.teacher-desktop-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 110px;
+}
+
+.teacher-desktop-sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 25px 20px;
+  font-size: 15px;
+  color: var(--color-neutral-dark-gray);
+  text-decoration: none;
+  transition: 0.25s ease;
+  white-space: nowrap;
+}
+
+.teacher-desktop-sidebar nav a:hover {
+  color: var(--primary-color);
+}
+
+.teacher-desktop-sidebar nav a img {
+  width: 41px;
+  height: 41px;
+  object-fit: contain;
+}
+
+.teacher-desktop-sidebar nav a span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.teacher-desktop-sidebar:hover nav a span {
+  opacity: 1;
+}
+
+.teacher-desktop-sidebar a.logout span {
+  color: var(--accent-color);
+}
+
+/* Hide desktop sidebar on mobile */
+@media (max-width: 900px) {
+  .teacher-desktop-sidebar {
+    display: none;
+  }
+}
+
+/* ==========TEACHER MOBILE HEADER=========== */
+
+.teacher-mobile-header {
+  display: none;
+  height: 110px;
+  padding: 0 20px;
+  background: var(--color-neutral-gray);
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 900;
+}
+
+.teacher-mobile-logo {
+  width: 80px;
+  height: auto;
+}
+
+#teacher-mobile-toggle {
+  font-size: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* Show header only on mobile */
+@media (max-width: 900px) {
+  .teacher-mobile-header {
+    display: flex;
+  }
+}
+
+/* ==========TEACHER MOBILE SIDEBAR=========== */
+
+.teacher-mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 280px;
+  height: 100vh;
+  background: var(--color-neutral-gray);
+  padding: 100px 24px 0;
+  box-shadow: -4px 0 18px rgba(0, 0, 0, 0.12);
+  transition: right 0.28s ease;
+  z-index: 1000;
+}
+
+.teacher-mobile-sidebar.open {
+  right: 0;
+}
+
+.teacher-mobile-sidebar button#teacher-mobile-close {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.teacher-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.teacher-mobile-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  font-size: 18px;
+  color: var(--color-neutral-dark-gray);
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.teacher-mobile-links a img {
+  width: 28px;
+  height: 28px;
+}
+
+.teacher-mobile-links a.logout {
+  color: var(--accent-color);
+}
+
+.teacher-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 900;
+}
+
+.teacher-mobile-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
