@@ -13,6 +13,43 @@ const firstNameError = document.getElementById("firstNameError");
 const surnameError = document.getElementById("surnameError");
 const passwordError = document.getElementById("passwordError");
 const confirmPasswordError = document.getElementById("confirmPasswordError");
+const signupAlert = document.getElementById("signup-alert");
+const signupAlertIcon = document.getElementById("signup-alert-icon");
+const signupAlertTitle = document.getElementById("signup-alert-title");
+const signupAlertMessage = document.getElementById("signup-alert-message");
+const signupAlertCloseBtn = document.getElementById("signup-alert-close");
+
+let signupAlertTimeout = null;
+
+function showAlert(type, title, message) {
+  if (signupAlertTimeout) {
+    clearTimeout(signupAlertTimeout);
+  }
+
+  signupAlert.classList.remove("alert-success", "alert-error");
+
+  if (type === "success") {
+    signupAlert.classList.add("alert-success");
+    signupAlertIcon.src = "../public/icons/success.png";
+    signupAlertIcon.alt = "Success";
+  } else {
+    signupAlert.classList.add("alert-error");
+    signupAlertIcon.src = "../public/icons/fail.png";
+    signupAlertIcon.alt = "Error";
+  }
+
+  signupAlertTitle.textContent = title;
+  signupAlertMessage.textContent = message;
+  signupAlert.setAttribute("aria-hidden", "false");
+
+  signupAlertTimeout = setTimeout(() => {
+    hideAlert();
+  }, 4000);
+}
+
+function hideAlert() {
+  signupAlert.setAttribute("aria-hidden", "true");
+}
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -70,6 +107,8 @@ signupForm.addEventListener("submit", (e) => {
   }
 
   if (hasError) {
+    showAlert("error", "Failed Sign Up !", "Wrong password or email address!");
+
     const firstError = document.querySelector(".error:not(:empty)");
     if (firstError) {
       const input = firstError.previousElementSibling;
@@ -78,6 +117,17 @@ signupForm.addEventListener("submit", (e) => {
     return;
   }
 
-  alert("Account created successfully!");
+  showAlert(
+    "success",
+    "Success!",
+    "Please check your email for instructions on how to verify your account."
+  );
   signupForm.reset();
+});
+
+signupAlertCloseBtn.addEventListener("click", () => {
+  if (signupAlertTimeout) {
+    clearTimeout(signupAlertTimeout);
+  }
+  hideAlert();
 });

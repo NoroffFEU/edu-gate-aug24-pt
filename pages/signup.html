@@ -12,6 +12,27 @@
 
   <body>
     <header id="header"></header>
+    <div
+      id="signup-alert"
+      class="login-alert"
+      role="status"
+      aria-live="polite"
+      aria-hidden="true"
+    >
+      <img id="signup-alert-icon" src="" alt="" class="alert-icon" />
+      <div class="alert-content">
+        <h3 id="signup-alert-title" class="alert-title"></h3>
+        <p id="signup-alert-message" class="alert-message"></p>
+      </div>
+      <button
+        id="signup-alert-close"
+        class="alert-close"
+        type="button"
+        aria-label="Close alert"
+      >
+        ×
+      </button>
+    </div>
     <main class="login-container">
       <section class="login-card">
         <h2 class="login-title">Sign up</h2>

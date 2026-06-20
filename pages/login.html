@@ -19,6 +19,30 @@
 
   <body>
     <header id="header"></header>
+
+    <!-- Login Alert -->
+    <div
+      id="login-alert"
+      class="login-alert"
+      role="status"
+      aria-live="polite"
+      aria-hidden="true"
+    >
+      <img id="alert-icon" src="" alt="" class="alert-icon" />
+      <div class="alert-content">
+        <h3 id="alert-title" class="alert-title"></h3>
+        <p id="alert-message" class="alert-message"></p>
+      </div>
+      <button
+        id="alert-close"
+        class="alert-close"
+        type="button"
+        aria-label="Close alert"
+      >
+        ×
+      </button>
+    </div>
+
     <main class="login-container">
       <section class="login-card">
         <h2 class="login-title">Log in</h2>
